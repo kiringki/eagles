@@ -81,7 +81,7 @@
         <div class="container" style="padding-bottom: 50px">
 
             <!-- Logo -->
-            <h1 id="logo"><a href="index.html">이글스</a></h1>
+            <h1 id="logo"><a>이글스</a></h1>
             <p>Easy하게 글써지는 News</p>
 
             <!-- Nav -->
@@ -106,7 +106,7 @@
                                         <li><a href="#">덕성여대</a></li>
                                         <li><a href="#">동국대(서울)</a></li>
                                         <li><a href="#">부산대</a></li>
-                                        <li><a href="#">서강대</a></li>
+                                        <li><a href="/seogang">서강대</a></li>
                                         <li><a href="#">서울과기대</a></li>
                                         <li><a href="#">서울시립대</a></li>
                                         <li><a href="#">서울여대</a></li>
@@ -166,7 +166,7 @@
                         </ul>
                     </li> <!-- 여기까지 두번째 상단바 메뉴 -->
 
-                    <li><a class="icon fa-user" href="/left-sidebar"><span>함께 공부하기</span></a>
+                    <li><a class="icon fa-user" ><span>함께 공부하기</span></a>
                         <ul>
                             <li><a href="#">스터디 • 모임</a></li>
                             <li><a href="#">학원 • 과외</a></li>
@@ -200,7 +200,6 @@
                         <tr>
                             <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >기간 선택</th>
                             <td>
-                                <input id="radio" type="radio" name="term" value = "전체" checked><strong>전체</strong>&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1일">1일&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1주">1주&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1개월">1개월&nbsp&nbsp&nbsp
@@ -212,14 +211,14 @@
                         <tr>
                             <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >직접 입력</th>
                             <td>
-                                <input id="direct" type="text" placeholder="시작" class="col-lg-6">
-                                <input id="direct" type="text" placeholder="끝" class="col-lg-6">
+                                <input id="directFrom" name="directterm" type="text" placeholder="시작" class="col-lg-6" style="float: left">
+                                <input id="directUntil" name="directterm" type="text" placeholder="끝" class="col-lg-6" style="float: left">
                             </td>
                         </tr>
                         <tr>
                             <th style="text-align: center"; bgcolor="#FFAEA6">통합분류</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="sort" class="check-all" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="sort" class="check-all"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "정치"> 정치&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "경제"> 경제&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "사회"> 사회&nbsp&nbsp&nbsp&nbsp
@@ -234,7 +233,7 @@
                         <tr>
                             <th style="text-align: center">중앙지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-center" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-center"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "경향신문"> 경향신문&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "국민일보"> 국민일보&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "내일신문"> 내일신문&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -251,7 +250,7 @@
                         <tr>
                             <th style="text-align: center">경제지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-eco" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-eco"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "매일경제"> 매일경제&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "머니투데이"> 머니투데이&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "서울경제"> 서울경제&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -266,7 +265,7 @@
                         <tr>
                             <th style="text-align: center">지역종합지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-country" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-country"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "강원도민일보"> 강원도민일보&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "강원일보"> 강원일보&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "경기일보"> 경기일보&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -300,7 +299,7 @@
                         <tr>
                             <th style="text-align: center">방송사</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-broad" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-broad"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "MBC"> MBC&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "OBS"> OBS&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "SBS"> SBS&nbsp&nbsp&nbsp&nbsp
@@ -310,7 +309,7 @@
                         <tr>
                             <th style="text-align: center">전문지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-pro" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-pro"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="pro" value = "디지털타임스"> 디지털타임스&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="pro" value = "전자신문"> 전자신문&nbsp&nbsp&nbsp&nbsp
                             </TD>
@@ -338,7 +337,7 @@
                                 <span class="date">토픽 1위</span>
                                 <h3><a>{{topic0}}</a></h3>
                             </header>
-                            <a id="DownArrow1" class="icon fa-angle-double-down"></a>
+                            <a id="DownArrow1" class="icon fa-angle-double-down fa-2x"></a>
                             <div id="keytable1" class ="col-md-12 text-wrap mb-3">
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic0provider0}}&codedate={{topic0date0}}">{{topic0title0}}</a></h5>
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic0provider1}}&codedate={{topic0date1}}">{{topic0title1}}</a></h5>
@@ -356,7 +355,7 @@
                                 <span class="date">토픽 2위</span>
                                 <h3><a>{{topic1}}</a></h3>
                             </header>
-                            <a id="DownArrow2" class="icon fa-angle-double-down"></a>
+                            <a id="DownArrow2" class="icon fa-angle-double-down fa-2x"></a>
                             <div id="keytable2" class ="col-md-12 text-wrap mb-3">
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic1provider0}}&codedate={{topic1date0}}">{{topic1title0}}</a></h5>
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic1provider1}}&codedate={{topic1date1}}">{{topic1title1}}</a></h5>
@@ -373,7 +372,7 @@
                                 <span class="date">토픽 3위</span>
                                 <h3><a>{{topic3}}</a></h3>
                             </header>
-                            <a id="DownArrow3" class="icon fa-angle-double-down"></a>
+                            <a id="DownArrow3" class="icon fa-angle-double-down fa-2x"></a>
                             <div id="keytable3" class ="col-md-12 text-wrap mb-3">
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic2provider0}}&codedate={{topic2date0}}">{{topic2title0}}</a></h5>
                                 <h5><a style="text-align: center; " href="/newspage?codeprovider={{topic2provider1}}&codedate={{topic2date1}}">{{topic2title1}}</a></h5>
@@ -401,7 +400,7 @@
     <!-- Banner -->
     <section id="banner">
         <div class="container">
-            <p><a href="#">광고배너자리</a><br /></p>
+            <a href="#"> <img src="/images/adBanner.png" style="display: block; width:80%; height:80%; margin-left: auto; margin-right: auto"></a>
         </div>
     </section>
 
@@ -418,26 +417,26 @@
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <a href="#">
-                        <img class="d-block img-fluid" src="/images/pic01.png" style="width:70%; height:70%; margin-left: auto; margin-right: auto" alt="First slide" >
+                        <img class="d-block img-fluid" src="/images/1.PNG" style="width:60%; height:60%; margin-left: auto; margin-right: auto" alt="First slide" >
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block img-fluid" src="/images/pic02.png" style="width:70%; height:70%; margin-left: auto; margin-right: auto"alt="Second slide">
+                        <img class="d-block img-fluid" src="/images/2.PNG" style="width:60%; height:60%; margin-left: auto; margin-right: auto"alt="Second slide">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block img-fluid" src="/images/pic03.png" style="width:70%; height:70%; margin-left: auto; margin-right: auto" alt="Third slide">
+                        <img class="d-block img-fluid" src="/images/3.PNG" style="width:60%; height:60%; margin-left: auto; margin-right: auto" alt="Third slide">
                     </a>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="margin-left: 10%">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="margin-right: 10%">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -601,13 +600,125 @@
 
 <script language="javascript">
     var selection = "전체";
+    var queryString = "";
+
     function buttonClicked() {
         var keyword = document.getElementById("keywordtext").value;
+        var dateFrom = document.getElementById("directFrom").value;
+        var dateUntil = document.getElementById("directUntil").value;
         var radio = document.getElementById("radio").value;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+        $("input[name=term]:checked").each(function () {
+            if($(this).val() == "1일"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                dd = dd - 1;
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }else if($(this).val() == "1주"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                dd = dd - 7;
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }else if($(this).val() == "1개월"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                mm = mm - 1;
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }else if($(this).val() == "3개월"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                mm = mm - 3;
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }else if($(this).val() == "6개월"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                if(mm<6) {
+                    mm = 11;
+                    yyyy = yyyy - 1;
+                }else{
+                    mm = mm - 6;
+                    if(mm<6) {
+                        mm='0'+mm
+                    }
+                }
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }else if($(this).val() == "1년"){
+                console.log($(this).val());
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                dateUntil = yyyy + "-" + mm + "-" + dd;
+                yyyy = yyyy - 1;
+                dateFrom = yyyy + "-" + mm + "-" + dd;
+            }
+        });
+
+
+        $("input[name=sort]:checked").each(function () {
+            queryString = queryString + "category=" + $(this).val() + "&";
+            console.log(queryString);
+        });
+        $("input[name=paper]:checked").each(function () {
+            queryString = queryString + "provider=" + $(this).val() + "&";
+            console.log(queryString);
+        });
+        if(dateFrom)
+            queryString = queryString + "datefrom=" + dateFrom + "&";
+        if(dateUntil)
+            queryString = queryString + "dateuntil=" + dateUntil;
+
         if (!keyword) {
             alert("검색어를 입력해주세요.");
         }else {
-            {window.location.href = "/search?query=" + keyword;}
+            {window.location.href = "/search?query=" + keyword + "&" + queryString;}
         }
     }
 </script>

@@ -65,6 +65,8 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
+                    <li><a class="icon fa-calendar" href="/year-keyword"><span>기간별 토픽</span></a>
+                    </li>
                     <li><a class="icon fa-align-center"><span>논술 기출</span></a>
                         <ul>
                             <li><a href="#">대학별 기출</a>
@@ -82,7 +84,7 @@
                                         <li><a href="#">덕성여대</a></li>
                                         <li><a href="#">동국대(서울)</a></li>
                                         <li><a href="#">부산대</a></li>
-                                        <li><a href="#">서강대</a></li>
+                                        <li><a href="/seogang">서강대</a></li>
                                         <li><a href="#">서울과기대</a></li>
                                         <li><a href="#">서울시립대</a></li>
                                         <li><a href="#">서울여대</a></li>
@@ -155,11 +157,11 @@
                 <div></div>
                 <div class="search-box-margin">
                     <form method="post" action="#">
-                        <input type="text" placeholder=" 검색어를 입력해주세요.">
+                        <input id="keywordtext" type="text" placeholder=" 검색어를 입력해주세요.">
                     </form>
                 </div>
                 <div>
-                    <a href="#" class="button icon fa-search">검색</a>
+                    <input style="word-break: keep-all" type="submit" class="button icon fa-search" onclick="buttonClicked(); return false;" value="검색"/>
                 </div>
             </div>
 
@@ -167,13 +169,13 @@
             <div class="col-lg-12" style="margin-top: 1.5%; margin-left: 2.7%">
                 <a id="table-btn" class="btn btn-outline-danger mb-2" style="width:80%;">상세검색 접기</a>
             </div>
-            <div id="table" class ="col-md-12 text-wrap mb-3">
+            <div id="table" class ="col-md-12 text-wrap mb-3" style="display: none">
                 <form name="sort-table">
-                    <table class="table table-bordered" style="display: block" align = "center">
+                    <table class="table table-bordered"  align = "center">
                         <tr>
-                            <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >기간</th>
+                            <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >기간 선택</th>
                             <td>
-                                <input id="radio" type="radio" name="term" value = "전체" checked><strong>전체</strong>&nbsp&nbsp&nbsp
+
                                 <input id="radio" type="radio" name="term" value = "1일">1일&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1주">1주&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1개월">1개월&nbsp&nbsp&nbsp
@@ -183,10 +185,18 @@
                             </td>
                         </tr>
                         <tr>
+
+                            <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >직접 입력</th>
+                            <td>
+                                <input id="directFrom" name="directterm" type="text" placeholder="시작" class="col-lg-6" style="float: left">
+                                <input id="directUntil" name="directterm" type="text" placeholder="끝" class="col-lg-6" style="float: left">
+                            </td>
+                        </tr>
+                        <tr>
                             <th style="text-align: center"; bgcolor="#FFAEA6">통합분류</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="sort" class="check-all" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp
-                                <input id="checkbox" type="checkbox" name="sort" class="ab" value = "정치"> 정치&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="sort" class="check-all"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp
+              <input id="checkbox" type="checkbox" name="sort" class="ab" value = "정치"> 정치&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "경제"> 경제&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "사회"> 사회&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="sort" class="ab" value = "문화"> 문화&nbsp&nbsp&nbsp&nbsp
@@ -200,7 +210,8 @@
                         <tr>
                             <th style="text-align: center">중앙지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-center" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-center"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "경향신문"> 경향신문&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "국민일보"> 국민일보&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="center" value = "내일신문"> 내일신문&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -217,7 +228,8 @@
                         <tr>
                             <th style="text-align: center">경제지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-eco" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-eco"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "매일경제"> 매일경제&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "머니투데이"> 머니투데이&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="eco" value = "서울경제"> 서울경제&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -232,7 +244,9 @@
                         <tr>
                             <th style="text-align: center">지역종합지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-country" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-country"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "강원도민일보"> 강원도민일보&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "강원일보"> 강원일보&nbsp&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="country" value = "경기일보"> 경기일보&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -266,7 +280,9 @@
                         <tr>
                             <th style="text-align: center">방송사</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-broad" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-broad"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "MBC"> MBC&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "OBS"> OBS&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="broad" value = "SBS"> SBS&nbsp&nbsp&nbsp&nbsp
@@ -276,7 +292,9 @@
                         <tr>
                             <th style="text-align: center">전문지</th>
                             <TD>
-                                <input id="checkbox" type="checkbox" name="paper" class="check-all-pro" value = "전체"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                                <input id="checkbox" type="checkbox" name="paper" class="check-all-pro"><strong>전체</strong>&nbsp&nbsp&nbsp&nbsp&nbsp
+
                                 <input id="checkbox" type="checkbox" name="paper" class="pro" value = "디지털타임스"> 디지털타임스&nbsp&nbsp&nbsp&nbsp
                                 <input id="checkbox" type="checkbox" name="paper" class="pro" value = "전자신문"> 전자신문&nbsp&nbsp&nbsp&nbsp
                             </TD>
