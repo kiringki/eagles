@@ -52,6 +52,12 @@
         margin: 0 0 0 110px;
         padding: 5px;
     }
+    #floating-bar > button {
+        height: 52px;
+        width: 70px;
+        margin-bottom: 5px; padding: 3px; border-radius: 7px;
+    }
+
     #essaytitle{
         position: relative;
         background: #fff;
@@ -72,6 +78,54 @@
         letter-spacing: 13px;
     }
 
+    @media ( max-width: 1000px ) {
+        #floating-bar{
+            height: 80px;
+            width: 45%;
+            position:fixed;
+            top:85%;
+            bottom: 0;
+            right: 25%;
+            text-align: center;
+            margin: 0 auto 0 auto;
+        }
+        #floating-bar > button{
+            margin: 0 5px 0 5px;
+            height: 52px;
+            width: 20%;
+            padding: 3px; border-radius: 7px;
+            float: left;
+        }
+    }
+
+    @media ( max-width: 800px ) {
+        #floating-bar{
+            width: 50%;
+        }
+        #floating-bar > button{
+            font-size: 10pt;
+        }
+    }
+    @media ( max-width: 670px ) {
+        #floating-bar{
+            right: 10%;
+        }
+    }
+    @media ( max-width: 670px ) {
+        #floating-bar{
+            width: 70%;
+        }
+    }
+    @media ( max-width: 600px ) {
+        #floating-bar{
+            right: 5%;
+            width: 80%;
+        }
+        #floating-bar > button{
+            font-size: 10pt;
+        }
+    }
+
 </style>
 <body class="no-sidebar is-preload">
 <div id="page-wrapper">
@@ -84,55 +138,57 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
+                    <li><a class="icon fa-calendar" href="/year-keyword"><span>기간별 토픽</span></a>
+                    </li>
                     <li><a class="icon fa-align-center"><span>논술 기출</span></a>
                         <ul>
-                            <li><a href="#">대학별 기출</a>
+                            <li><a>대학별 기출</a>
                                 <ul>
                                     <div class="columns">
-                                        <li><a href="#">가톨릭대(경기)</a></li>
-                                        <li><a href="#">가톨릭대(서울)</a></li>
-                                        <li><a href="#">건국대(서울)</a></li>
-                                        <li><a href="#">경기대(경기)</a></li>
-                                        <li><a href="#">경기대(서울)</a></li>
-                                        <li><a href="#">경북대</a></li>
-                                        <li><a href="#">경희대</a></li>
-                                        <li><a href="#">광운대</a></li>
-                                        <li><a href="#">단국대</a></li>
-                                        <li><a href="#">덕성여대</a></li>
-                                        <li><a href="#">동국대(서울)</a></li>
-                                        <li><a href="#">부산대</a></li>
-                                        <li><a href="#">서강대</a></li>
-                                        <li><a href="#">서울과기대</a></li>
-                                        <li><a href="#">서울시립대</a></li>
-                                        <li><a href="#">서울여대</a></li>
-                                        <li><a href="#">성균관대</a></li>
-                                        <li><a href="#">성신여대</a></li>
-                                        <li><a href="#">세종대</a></li>
+                                        <li><a>가톨릭대(경기)</a></li>
+                                        <li><a>가톨릭대(서울)</a></li>
+                                        <li><a>건국대(서울)</a></li>
+                                        <li><a>경기대(경기)</a></li>
+                                        <li><a>경기대(서울)</a></li>
+                                        <li><a>경북대</a></li>
+                                        <li><a>경희대</a></li>
+                                        <li><a>광운대</a></li>
+                                        <li><a>단국대</a></li>
+                                        <li><a>덕성여대</a></li>
+                                        <li><a>동국대(서울)</a></li>
+                                        <li><a>부산대</a></li>
+                                        <li><a href="/seogang">서강대</a></li>
+                                        <li><a>서울과기대</a></li>
+                                        <li><a>서울시립대</a></li>
+                                        <li><a>서울여대</a></li>
+                                        <li><a>성균관대</a></li>
+                                        <li><a>성신여대</a></li>
+                                        <li><a>세종대</a></li>
                                         <li><a href="/sookmyung">숙명여대</a></li>
-                                        <li><a href="#">숭실대</a></li>
-                                        <li><a href="#">아주대</a></li>
-                                        <li><a href="#">연세대(서울)</a></li>
-                                        <li><a href="#">연세대(원주)</a></li>
-                                        <li><a href="#">인하대</a></li>
-                                        <li><a href="#">중앙대(서울)</a></li>
-                                        <li><a href="#">중앙대(안성)</a></li>
-                                        <li><a href="#">한국기술교육대</a></li>
-                                        <li><a href="#">한국산업기술대</a></li>
-                                        <li><a href="#">한국외대</a></li>
-                                        <li><a href="#">한양대(서울)</a></li>
-                                        <li><a href="#">한양대(ERICA)</a></li>
-                                        <li><a href="#">홍익대</a></li>
+                                        <li><a>숭실대</a></li>
+                                        <li><a>아주대</a></li>
+                                        <li><a>연세대(서울)</a></li>
+                                        <li><a>연세대(원주)</a></li>
+                                        <li><a>인하대</a></li>
+                                        <li><a>중앙대(서울)</a></li>
+                                        <li><a>중앙대(안성)</a></li>
+                                        <li><a>한국기술교육대</a></li>
+                                        <li><a>한국산업기술대</a></li>
+                                        <li><a>한국외대</a></li>
+                                        <li><a>한양대(서울)</a></li>
+                                        <li><a>한양대(ERICA)</a></li>
+                                        <li><a>홍익대</a></li>
                                     </div>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">영역별 기출</a>
+                                <a>영역별 기출</a>
                                 <ul>
-                                    <li><a href="#">경상</a></li>
-                                    <li><a href="#">예체능</a></li>
-                                    <li><a href="#">인문(사회)</a></li>
-                                    <li><a href="#">영어</a></li>
-                                    <li><a href="#">통계도표</a></li>
+                                    <li><a>경상</a></li>
+                                    <li><a>예체능</a></li>
+                                    <li><a>인문(사회)</a></li>
+                                    <li><a>영어</a></li>
+                                    <li><a>통계도표</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -142,39 +198,40 @@
                         <a href="#" class="icon fa-info"><span>입시정보</span></a>
                         <ul>
                             <li>
-                                <a href="#">보도자료</a>
+                                <a>보도자료</a>
                                 <ul>
-                                    <li><a href="#">대학별 보도</a></li>
-                                    <li><a href="#">교육업체 • 학원</a></li>
-                                    <li><a href="#">정부 • 공공기관</a></li>
+                                    <li><a>대학별 보도</a></li>
+                                    <li><a>교육업체 • 학원</a></li>
+                                    <li><a>정부 • 공공기관</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">대학소식</a>
+                                <a>대학소식</a>
                                 <ul>
-                                    <li><a href="#">논술전형 공지</a></li>
-                                    <li><a href="#">논술 가이드</a></li>
-                                    <li><a href="#">모의논술 공지</a></li>
-                                    <li><a href="#">수능최저등급 기준</a></li>
+                                    <li><a>논술전형 공지</a></li>
+                                    <li><a>논술 가이드</a></li>
+                                    <li><a>모의논술 공지</a></li>
+                                    <li><a>수능최저등급 기준</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li> <!-- 여기까지 두번째 상단바 메뉴 -->
 
-                    <li><a class="icon fa-user" href="/left-sidebar"><span>함께 공부하기</span></a>
+                    <li><a class="icon fa-user" ><span>함께 공부하기</span></a>
                         <ul>
-                            <li><a href="#">스터디 • 모임</a></li>
-                            <li><a href="#">학원 • 과외</a></li>
-                            <li><a href="#">튜터링 신청</a></li>
+                            <li><a>스터디 • 모임</a></li>
+                            <li><a>학원 • 과외</a></li>
+                            <li><a>튜터링 신청</a></li>
                         </ul>
                     </li> <!-- 여기까지 세번째 상단바 메뉴 -->
+
                 </ul>
             </nav>
             <div class="search-box-grid">
                 <div></div>
                 <div class="search-box-margin">
                     <form method="post" action="#">
-                        <input type="text" placeholder=" 검색어를 입력해주세요.">
+                        <input id="keywordtext" type="text" placeholder=" 검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {buttonClicked(); return false;}">
                     </form>
                 </div>
                 <div>
@@ -184,7 +241,7 @@
 
             <!--상세검색-->
             <div class="col-lg-12" style="margin-top: 1.5%; margin-left: 2.7%">
-                <a id="table-btn" class="btn btn-outline-danger mb-2" style="width:80%;">상세검색 접기</a>
+                <a id="table-btn" class="btn btn-outline-danger mb-2" style="width:80%;">상세검색 펼치기</a>
             </div>
             <div id="table" class ="col-md-12 text-wrap mb-3" style="display: none">
                 <form name="sort-table">
@@ -196,15 +253,15 @@
                                 <input id="radio" type="radio" name="term" value = "1주">1주&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1개월">1개월&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "3개월">3개월&nbsp&nbsp&nbsp
-                                <input id="radio" type="radio" name="term" value = "6개월">6개월&nbsp&nbsp&nbsp
+                                <input id="radio" type="radio" name="term" value = "6개월" checked>6개월&nbsp&nbsp&nbsp
                                 <input id="radio" type="radio" name="term" value = "1년">1년&nbsp&nbsp&nbsp
                             </td>
                         </tr>
                         <tr>
                             <th nowrap="nowrap" style="width: 150px; text-align: center"; bgcolor="#FFAEA6" >직접 입력</th>
                             <td>
-                                <input id="directFrom" name="directterm" type="text" placeholder="시작" class="col-lg-6" style="float: left">
-                                <input id="directUntil" name="directterm" type="text" placeholder="끝" class="col-lg-6" style="float: left">
+                                <input id="directFrom" name="directterm" type="text" placeholder="시작 (예시: 2019-01-01)" class="col-lg-6" style="float: left">
+                                <input id="directUntil" name="directterm" type="text" placeholder="끝 (예시: 2019-01-31)" class="col-lg-6" style="float: left">
                             </td>
                         </tr>
                         <tr>
@@ -316,19 +373,27 @@
         <div class="container">
             <div id="content">
                 <div class="col-lg-2" style="float: left">
-                    <button style="width:100%;padding: 10px;word-break: keep-all;" class="mb-2">관련 기출</button>
-                    <button style="width:100%;padding: 10px;word-break: keep-all" class="mb-2">관련 도서</button>
-                    <h4 style="padding: 10px;word-break: keep-all">관련 키워드</h4>
-                    <p>{{keyword0}}</p>
-                    <p>{{keyword1}}</p>
-                    <p>{{keyword2}}</p>
-                    <p>{{keyword3}}</p>
-                    <p>{{keyword4}}</p>
-                    <p>{{keyword5}}</p>
-                    <p>{{keyword6}}</p>
-                    <p>{{keyword7}}</p>
-                    <p>{{keyword8}}</p>
-                    <p>{{keyword9}}</p>
+                    <div class="col-6 col-lg-12" style="float: left">
+                        <button style="width:100%;padding: 10px;word-break: keep-all;" class="mb-2">관련 기출</button>
+                    </div>
+                    <div class="col-6 col-lg-12" style="float: left">
+                        <button style="width:100%;padding: 10px;word-break: keep-all" class="mb-2">관련 도서</button>
+                    </div>
+                    <div class="col-lg-12">
+                        <button id="keyword-btn" style="width:100%;padding: 10px;word-break: keep-all" class="mb-2">관련 키워드</button>
+                    </div>
+                    <div id="keyword-table" style="display: block">
+                        <p>{{keyword0}}</p>
+                        <p>{{keyword1}}</p>
+                        <p>{{keyword2}}</p>
+                        <p>{{keyword3}}</p>
+                        <p>{{keyword4}}</p>
+                        <p>{{keyword5}}</p>
+                        <p>{{keyword6}}</p>
+                        <p>{{keyword7}}</p>
+                        <p>{{keyword8}}</p>
+                        <p>{{keyword9}}</p>
+                    </div>
                 </div>
                 <div class="col-lg-5" style="float: left">
                     <h3>스트레이트 기사</h3>
@@ -336,7 +401,7 @@
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight0provider}}&codedate={{straight0date}}">{{straight0title}}</a></h5>
                         <p >{{straight0hilight}}</p>
                         <p style="text-align: left">
-                            {{#if straight0newsprovider}}{{straight0newsprovider}} / {{/if}}
+                            {{#if straight0newsprovider}} {{straight0newsprovider}} / {{/if}}
                             {{straight0published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -344,7 +409,8 @@
                     {{#if straight1title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight1provider}}&codedate={{straight1date}}">{{straight1title}}</a></h5>
                         <p >{{straight1hilight}}</p>
-                        <p style="text-align: left">{{#if straight1newsprovider}}{{straight1newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight1newsprovider}} {{straight1newsprovider}} / {{/if}}
                             {{straight1published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -352,7 +418,8 @@
                     {{#if straight2title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight2provider}}&codedate={{straight2date}}">{{straight2title}}</a></h5>
                         <p >{{straight2hilight}}</p>
-                        <p style="text-align: left"> {{#if straight2newsprovider}}{{straight2newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight2newsprovider}}{{straight2newsprovider}} / {{/if}}
                             {{straight2published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -361,7 +428,8 @@
                     {{#if straight3title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight3provider}}&codedate={{straight3date}}">{{straight3title}}</a></h5>
                         <p >{{straight3hilight}}</p>
-                        <p style="text-align: left"> {{#if straight3newsprovider}}{{straight3newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight3newsprovider}}{{straight3newsprovider}} / {{/if}}
                             {{straight3published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -370,7 +438,8 @@
                     {{#if straight4title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight4provider}}&codedate={{straight4date}}">{{straight4title}}</a></h5>
                         <p >{{straight4hilight}}</p>
-                        <p style="text-align: left"> {{#if straight4newsprovider}}{{straight4newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight4newsprovider}}{{straight4newsprovider}} / {{/if}}
                             {{straight4published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -378,7 +447,8 @@
                     {{#if straight5title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight5provider}}&codedate={{straight5date}}">{{straight5title}}</a></h5>
                         <p >{{straight5hilight}}</p>
-                        <p style="text-align: left">{{#if straight5newsprovider}}{{straight5newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight5newsprovider}}{{straight5newsprovider}} / {{/if}}
                             {{straight5published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -387,7 +457,8 @@
                     {{#if straight6title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight6provider}}&codedate={{straight6date}}">{{straight6title}}</a></h5>
                         <p >{{straight6hilight}}</p>
-                        <p style="text-align: left">{{#if straight6newsprovider}} {{straight6newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight6newsprovider}}{{straight6newsprovider}} / {{/if}}
                             {{straight6published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -396,7 +467,8 @@
                     {{#if straight7title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight7provider}}&codedate={{straight7date}}">{{straight7title}}</a></h5>
                         <p >{{straight7hilight}}</p>
-                        <p style="text-align: left"> {{#if straight7newsprovider}}{{straight7newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight7newsprovider}}{{straight7newsprovider}} / {{/if}}
                             {{straight7published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -404,7 +476,8 @@
                     {{#if straight8title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight8provider}}&codedate={{straight8date}}">{{straight8title}}</a></h5>
                         <p >{{straight8hilight}}</p>
-                        <p style="text-align: left"> {{#if straight8newsprovider}}{{straight8newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight8newsprovider}}{{straight8newsprovider}} / {{/if}}
                             {{straight8published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -412,7 +485,8 @@
                     {{#if straight9title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{straight9provider}}&codedate={{straight9date}}">{{straight9title}}</a></h5>
                         <p >{{straight9hilight}}</p>
-                        <p style="text-align: left"> {{#if straight9newsprovider}}{{straight9newsprovider}} / {{/if}}
+                        <p style="text-align: left">
+                            {{#if straight9newsprovider}}{{straight9newsprovider}} / {{/if}}
                             {{straight9published_at}}</p>
                     {{/if}}
 
@@ -476,7 +550,7 @@
                     {{#if edit6title}}
                         <h5><a style="text-align: center; text-decoration:none!important" href="/newspage?codeprovider={{edit6provider}}&codedate={{edit6date}}">{{edit6title}}</a></h5>
                         <p >{{edit6hilight}}</p>
-                        <p style="text-align: left">{{#if edit6newsprovider}} {{edit6newsprovider}} / {{/if}}{
+                        <p style="text-align: left">{{#if edit6newsprovider}} {{edit6newsprovider}} / {{/if}}
                             {{edit6published_at}}</p>
                         <hr class="mb-5" style="width: 100%">
                     {{/if}}
@@ -507,19 +581,22 @@
                 </div>
             </div>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item" style="margin: 0.75em 0 0.75em 0;">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">이전</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <div class="page-link" href="#">다음</div>
-                </li>
-            </ul>
-        </nav>
     </section>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" style="margin: 0.75em 0 0.75em 0;">
+                <a class="page-link">
+                    <span >이전</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <div class="page-link">
+                    <span >다음</span>
+                </div>
+            </li>
+        </ul>
+    </nav>
 
     <!-- Footer -->
     <section id="footer">
@@ -536,10 +613,10 @@
     </section>
 
     <div id="floating-bar">
-        <button onclick="location.href='/'" style="margin-bottom: 5px; width: 100%; height: 25%; padding: 3px; border-radius: 7px;">Home</button>
-        <button style="margin-bottom: 5px; width: 100%; height: 25%; padding: 3px; border-radius: 7px;">기사<br>스크랩</button>
-        <button style="margin-bottom: 5px;width: 100%; height: 25%; padding: 3px; border-radius: 7px;">키워드<br>스크랩</button>
-        <button style="width: 100%; padding: 3px; height: 25%; border-radius: 7px;">Q&A</button>
+        <button onclick="location.href='/'">Home</button>
+        <button style="">기사<br>스크랩</button>
+        <button style="">키워드<br>스크랩</button>
+        <button style="">Q&A</button>
     </div>
 </div>
 
@@ -561,12 +638,25 @@
         $("#table-btn").click(function () {
             if($("#table").is(":visible")){
                 console.log("hide");
-                $("#table-btn").html("상세검색 펼치기");
                 $("#table").slideUp();
             }else{
                 console.log("show");
-                $("#table-btn").html("상세검색 접기");
                 $("#table").slideDown();
+            }
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        console.log("test");
+        $("#keyword-btn").click(function () {
+            if($("#keyword-table").is(":visible")){
+                console.log("hide");
+                $("#keyword-table").slideUp();
+            }else{
+                console.log("show");
+                $("#keyword-table").slideDown();
             }
         })
     })
@@ -679,6 +769,11 @@
 <script language="javascript">
     var selection = "전체";
     var queryString = "";
+    function Enter_Check(){
+        if(event.keyCode == 13){
+            buttonClicked();  // 실행할 이벤트
+        }
+    }
 
     function buttonClicked() {
         var keyword = document.getElementById("keywordtext").value;
@@ -794,7 +889,7 @@
             queryString = queryString + "dateuntil=" + dateUntil;
 
         if (!keyword) {
-            alert("검색어를 입력해주세요.");
+            {window.location.href = "/year-keyword" ;}
         }else {
             {window.location.href = "/search?query=" + keyword + "&" + queryString;}
         }

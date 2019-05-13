@@ -1,4 +1,4 @@
-/*package com.example.eagles.web;
+package com.example.eagles.web;
 
 import com.example.eagles.newsbigdata.Bigkinds;
 import com.example.eagles.newsbigdata.Document;
@@ -42,7 +42,7 @@ public class SearchController {
                          @RequestParam(value = "sortOrder", required = false, defaultValue = "desc")String sortOrder,
                          @RequestParam(value = "hilight", required = false, defaultValue = "100")String hilight,
                          @RequestParam(value = "returnFrom", required = false, defaultValue = "0")String returnFrom,
-                         @RequestParam(value = "returnSize", required = false, defaultValue = "100")String returnSize,
+                         @RequestParam(value = "returnSize", required = false, defaultValue = "1000")String returnSize,
                          @RequestParam(value = "fields", required = false, defaultValue = "null")String[] fields){
         NewsSearch newsSearch = new NewsSearch();
         Bigkinds bigkinds = new Bigkinds();
@@ -85,7 +85,7 @@ public class SearchController {
             int month = Integer.parseInt(yyyyMMdd.format(today).substring(4, 6));
             int date  = Integer.parseInt(yyyyMMdd.format(today).substring(6, 8));
             cal.set(year, month - 1, date);
-            cal.add(Calendar.YEAR, -1);     // 1년 전
+            cal.add(Calendar.MONTH, -6);     // 6개월 전
             SimpleDateFormat yyyy_MM_dd = new SimpleDateFormat("yyyy-MM-dd");
             dateFrom = yyyy_MM_dd.format(cal.getTime());
         }
@@ -112,22 +112,32 @@ public class SearchController {
 
             JSONObject jsonObject = wordCloud.makeQuery(query, dateFrom, dateUntil,
                     providerList,category_List,category_incident_List, byline, provider_subject_List);
-
             String searchQuery = bigkinds.postURL("http://tools.kinds.or.kr:8888/word_cloud",
                     jsonObject.toString());
-
             Object obj = jsonParser.parse(searchQuery);
             jsonObject = (JSONObject) obj;
             return_object = (JSONObject) jsonObject.get("return_object");
             nodes = (JSONArray) return_object.get("nodes");
-            System.out.println(nodes);
 
             for(int i = 0; i<nodes.size(); i++){
                 documentsElement = (JSONObject) nodes.get(i);
                 model.addAttribute("keyword"+i, documentsElement.get("name"));
             }
 
+            jsonObject = newsSearch.makeQuery(query, dateFrom, dateUntil,
+                    providerList,category_List,category_incident_List, byline, provider_subject_List,
+                    subject_info_List, subject_info1_List, subject_info2_List, subject_info3_List,
+                    subject_info4_List, sortField, sortOrder, hilightInt, returnFromInt, 0, fields_List);
+            searchQuery = bigkinds.postURL("http://tools.kinds.or.kr:8888/search/news",
+                    jsonObject.toString());
+            obj = jsonParser.parse(searchQuery);
+            jsonObject = (JSONObject) obj;
+            return_object = (JSONObject) jsonObject.get("return_object");
+            returnSizeInt = Integer.parseInt(return_object.get("total_hits").toString());
+            if(returnSizeInt>5000)
+                returnSizeInt = 5000;
 
+            //
             jsonObject = newsSearch.makeQuery(query, dateFrom, dateUntil,
                     providerList,category_List,category_incident_List, byline, provider_subject_List,
                     subject_info_List, subject_info1_List, subject_info2_List, subject_info3_List,
@@ -156,7 +166,6 @@ public class SearchController {
                         titlestr.contains("주석") || bylinestr.contains("주석") ||
                         titlestr.contains("논설위원") || bylinestr.contains("논설위원")){
                     if(editIndex < 10){
-                        System.out.println(editIndex);
                         model.addAttribute("edit" + editIndex + "title", documentsElement.get("title"));
                         model.addAttribute("edit" + editIndex + "provider", news_id.substring(0,8));
                         model.addAttribute("edit" + editIndex + "date", news_id.substring(9));
@@ -169,9 +178,9 @@ public class SearchController {
                     model.addAttribute("straight" + straightIndex + "title", documentsElement.get("title"));
                     model.addAttribute("straight" + straightIndex + "provider", news_id.substring(0,8));
                     model.addAttribute("straight" + straightIndex + "date", news_id.substring(9));
-                    model.addAttribute("straight" + editIndex + "newsprovider", documentsElement.get("provider"));
+                    model.addAttribute("straight" + straightIndex + "newsprovider", documentsElement.get("provider"));
                     published_at = (String)documentsElement.get("published_at");
-                    model.addAttribute("straight" + editIndex + "published_at", published_at.substring(0,10));
+                    model.addAttribute("straight" + straightIndex + "published_at", published_at.substring(0,10));
                     straightIndex++;
                 } else if (editIndex>=10) {
                     break;
@@ -217,4 +226,3 @@ public class SearchController {
         return listString;
     }
 }
-*/

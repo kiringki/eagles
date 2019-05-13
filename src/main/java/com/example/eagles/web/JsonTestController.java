@@ -1,6 +1,5 @@
 /*package com.example.eagles.web;
 
-import com.example.eagles.Spark.WordCount;
 import com.example.eagles.newsbigdata.Bigkinds;
 import com.example.eagles.newsbigdata.IssueRanking;
 import com.example.eagles.newsbigdata.NewsSearch;
@@ -20,10 +19,6 @@ import java.util.*;
 @Controller
 @AllArgsConstructor
 public class JsonTestController {
-
-    @Autowired
-    WordCount service;
-
     @GetMapping("/todaytopic")
     public String todaytopic(Model model){
         IssueRanking issueRanking = new IssueRanking();
@@ -82,8 +77,6 @@ public class JsonTestController {
                 }
             }
 
-            List<String> wordList = Arrays.asList(today_topic_keyword_all.split(","));
-            result.putAll(service.getCount(wordList));
             model.addAttribute("yearkeyword0",result.toString());
 
 
@@ -143,6 +136,4 @@ public class JsonTestController {
 
         return "jsontest";
     }
-}
-
- */
+}*/

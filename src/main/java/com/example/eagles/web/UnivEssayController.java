@@ -1,10 +1,9 @@
-/*package com.example.eagles.web;
+package com.example.eagles.web;
 
 import com.example.eagles.newsbigdata.Bigkinds;
 import com.example.eagles.newsbigdata.Document;
 import com.example.eagles.newsbigdata.NewsSearch;
 import lombok.AllArgsConstructor;
-import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -18,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-///@AllArgsConstructor
+@AllArgsConstructor
 public class UnivEssayController {
 
     @GetMapping("/sookmyung")
@@ -106,12 +105,10 @@ public class UnivEssayController {
                 "2010-01-01", simpleDateFormat.format(today),
                 providerList,category_List,category_incident_List, "", provider_subject_List,
                 subject_info_List, subject_info1_List, subject_info2_List, subject_info3_List,
-                subject_info4_List, "date", "desc", 200, 0, 100, fields_List).toString();
+                subject_info4_List, "date", "desc", 200, 0, 1000, fields_List).toString();
         resultString = bigkinds.postURL("http://tools.kinds.or.kr:8888/search/news",queryString);
-        System.out.println(resultString);
         try{
             documents = document.makeDoumentElement(resultString);
-            System.out.println(documents.toString());
             for(int i = 0; i<documents.size(); i++){
                 documentsElement = (JSONObject) documents.get(i);
                 title = (String) documentsElement.get("title");
@@ -266,4 +263,3 @@ public class UnivEssayController {
         return "seogang-2019-01-01";
     }
 }
-*/

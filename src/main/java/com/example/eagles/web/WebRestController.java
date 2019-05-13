@@ -1,6 +1,5 @@
-/*package com.example.eagles.web;
+package com.example.eagles.web;
 
-import com.example.eagles.Spark.WordCount;
 import com.example.eagles.newsbigdata.Bigkinds;
 import com.example.eagles.newsbigdata.IssueRanking;
 import com.example.eagles.newsbigdata.KeywordExtract;
@@ -18,9 +17,6 @@ import java.util.*;
 
 @RestController
 public class WebRestController {
-
-    @Autowired
-    WordCount service;
 
     @GetMapping("/irtest")
     public String irtest(Model model,
@@ -116,7 +112,7 @@ public class WebRestController {
     public String test() {
         IssueRanking issueRanking = new IssueRanking();
         Bigkinds bigkinds = new Bigkinds();
-        String posttest = issueRanking.makeIssue("2016-01-18").toString();
+        String posttest = issueRanking.makeIssue("2019-05-13").toString();
         String post = bigkinds.postURL("http://tools.kinds.or.kr:8888/issue_ranking",posttest);
         return post;
     }
@@ -192,12 +188,11 @@ public class WebRestController {
         return listString;
     }
 
-        @GetMapping("/wordcounttest")
+        /*@GetMapping("/wordcounttest")
         public Map<String, Long> wordcounttest() {
             String words = "Siddhant,Agnihotry,Technocrat,Siddhant,Sid";
             List<String> wordList = Arrays.asList(words.split(","));
             return service.getCount(wordList);
-        }
-    }
-*/
 
+        }*/
+}

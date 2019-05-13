@@ -58,7 +58,7 @@ public class WebController {
             e.printStackTrace();
         }
 
-        jsonObject = issueRanking.makeIssue("2019-05-08", providerList);
+        jsonObject = issueRanking.makeIssue(todaystr, providerList);
         String issueQuery = bigkinds.postURL("http://tools.kinds.or.kr:8888/issue_ranking",jsonObject.toString());
 
         try{
@@ -68,9 +68,11 @@ public class WebController {
 
             topics = (JSONArray) return_object.get("topics");
 
-            for(int i=0; i < 10 ;i++) {
+            for(int i=0; i < 3 ;i++) {
                 topicElement = (JSONObject) topics.get(i);
-                model.addAttribute(index + i, topicElement.get("topic"));
+                System.out.println(i + " " +topicElement.get("topic"));
+                model.addAttribute("topic" + i, topicElement.get("topic"));
+                //model.addAttribute(index + i, topicElement.get("topic"));
                 news_cluster = (JSONArray) topicElement.get("news_cluster");
                 for(int j=0; j<3; j++){
                     news_id = (String) news_cluster.get(j);
