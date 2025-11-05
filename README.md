@@ -1,5 +1,5 @@
 # Team 'Eagles'
-# BigData Contest (Won 3rd place)
+# BigData Hackathon (Won 3rd place)
 # AI-powered essay writing assistant that utilizes big data from news articles
 
 - heroku
