@@ -1,6 +1,6 @@
-# eagles
-# BigData Contest
-# Description : AI-powered essay writing assistant that utilizes big data from news articles
+# Team 'Eagles'
+# BigData Contest (Won 3rd place)
+# AI-powered essay writing assistant that utilizes big data from news articles
 
 - heroku
 - Spring boot  
